@@ -1,0 +1,612 @@
+/* FONTES DE TEXTO IMPORTADAS */
+@font-face {
+    font-family: "Poppins ExtraBold";
+    src: url(/fonts/Poppins-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: "Poppins Regular";
+    src: url(/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Poppins SemiBold";
+    src: url(/fonts/Poppins-SemiBold.ttf);
+}
+
+/* PALETAS DE CORES */
+:root {
+  --white-background: #FFFFFF;
+  --nav-bar-color: #00031b75;
+  --transparent: #FFFFFF00;
+  --main-text: #262626;
+  --blue-solar: #6464FB;
+  --golden-solar: #E8A44F;
+  --secondary-blue-solar: #5757ce;
+  --input-bg-color: #F1F1F1;
+  --placeholder: #C4CAE0;
+  --section-aboutUs-bg: #fbfbff;
+  --black-nav-color: #00031D;
+}
+
+/* ESTILIZAÇÃO GLOBAL */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: #6464fb7c;
+}
+
+/* ESTILIZAÇÃO DO BODY */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    background-color: var(-white-background);
+}
+
+/* ESTILIZAÇÃO DA NAVBAR */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6rem;
+    background-color: #00031b;
+    font-family: Poppins ExtraBold;
+    width: 100%;
+    position: fixed;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    transition: 0.3s ease-in;
+}
+
+.showNav {
+    background-color: #6464FB !important;
+}
+
+nav .logo img {
+    height: 3.7rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 1em;
+}
+
+nav ul li a {
+    display: flex;
+    text-decoration: none;
+    font-size: 1.3em;
+    text-transform: capitalize;
+    color: var(--white-background);
+}
+
+nav li a {
+    position: relative;
+    list-style: none;
+    letter-spacing: 0.5px;
+    padding: 0 10px;
+}
+
+nav li a::after {
+    content: '';
+    position: absolute;
+    background-color: var(--white-background);
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -8px;
+    transition: all 0.3s ease;
+}
+
+nav li a:hover::after {
+    width: 100%;
+}
+
+.nav-items {
+    margin: 0 1.6rem 0 0;
+}
+
+/* BOTÃO DE LOGIN NAVBAR */
+.btn {
+  background-color: var(--blue-solar);
+  color: var(--white-background);
+  transition: background-color 1s;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: none;
+  font-family: Poppins ExtraBold;
+}
+
+.btn:hover {
+  background-color: var(--secondary-blue-solar);
+}
+
+.btn:focus,
+.btn:active {
+    background-color: var(--secondary-blue-solar);
+    transition: none;
+}
+
+/* DESTAQUE DE TEXTO */
+highlight {
+    color: var(--golden-solar) !important; 
+}
+
+::placeholder {
+    color: var(--placeholder);
+}
+
+/* ESTILIZAÇÃO HOME PAGE*/
+/* SESSÃO HERO */
+.hero {
+    width: 100%;
+    height: 55rem;
+    background-image: url(../img/bg-solar-panel.png);
+    display: flex;
+    background-size: 100% 100%;
+}
+
+.rightSide, .leftSide {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heroText {
+    font-family: Poppins ExtraBold;
+    font-size: 2.7vw;
+    color: var(--white-background);
+    width: 63%;
+}
+
+/* CADASTRO */
+.cad {
+    width: 63%;
+    height: 83%;
+    background-color: var(--white-background);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cadContent {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cadTitle {
+    font-family: Poppins Regular;
+    font-weight: bold;
+    font-size: 1.7vw;
+    color: var(--main-text);
+    margin-bottom: 3rem;
+    width: 100%;
+    text-align: center;
+}
+
+.cadForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cadLabel, .cadLogin {
+    font-family: Poppins Regular;
+    font-size: 1.3vw;
+    color: var(--main-text);
+    align-self: flex-start;
+}
+
+.cadInput {
+    height: 2.5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--input-bg-color);
+    font-family: Poppins Regular;
+    font-size: 1vw;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+
+.cadLogin {
+    font-size: 1vw;
+    text-align: center;
+    width: 100%;
+}
+
+.login {
+    text-decoration: underline;
+    color: var(--main-text) !important;
+}
+
+#btn-cad {
+    width: 85%;
+    height: 4rem;
+    margin-top: 2.5rem;
+    font-size: 1.4vw
+}
+
+/* SECTION CARDS */
+.section-cards {
+    height: 50rem;
+    width: 100%;
+}
+
+.topSide, .bottomSide {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.topSide {
+    height: 20%;
+    justify-content: center;
+}
+
+.bottomSide {
+    height: 80%;
+    justify-content: space-around;
+}
+
+.title {
+    font-family: Poppins Regular;
+    font-weight: bold;
+    font-size: 2.5vw;
+    color: var(--main-text);
+}
+
+/* CARDS */
+
+.home-card {
+    display: inline-block;
+    height: 35rem;
+    width: 25%;
+    background-color: var(--input-bg-color);
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 4px 15px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 4px 15px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 4px 15px 0px rgba(0,0,0,0.2);
+}
+
+.card-title {
+    font-family: Poppins SemiBold;
+    font-size: 2.1vw;
+    margin-bottom: 3rem;
+    text-align: center;
+    width: 75%;
+}
+
+.card-text {
+    font-family: Poppins Regular;
+    font-size: 1.05vw;
+    text-align: center;
+    margin-bottom: 3rem;
+    width: 75%;
+}
+
+.cardContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-image {
+    margin-bottom: 3rem
+}
+
+.card-check {
+    justify-self: flex-start;
+    align-self: flex-end;
+    margin-top: 2rem;
+    margin-right: 1.5rem;
+}
+
+/* SECTION SOBRE NÓS */
+.section-aboutUs {
+    height: 35rem;
+    width: 100%;
+    background-color: var(--section-aboutUs-bg);
+}
+
+.abtTopSide {
+    height: 100%;
+}
+
+.abtLeftSide {
+    flex-direction: column;
+}
+
+.aboutUs-text {
+    width: 80%;
+    font-size: 1.5rem;
+    font-family: Poppins Regular;
+}
+
+.abtTitle {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+}
+
+.abtPic {
+    width: 80%;
+    border-radius: 10px;
+}
+
+/* SECTION CADASTRO */
+.sectionCad {
+    width: 100%;
+    height: 60rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 6rem;
+}
+
+.cadContainer {
+    width: 55%;
+    height: 95%;
+    background-color: #fafafa;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cad-title {
+    margin-top: 2rem;
+    font-family: Poppins SemiBold;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.cadLabel-in {
+    font-family: Poppins Regular;
+    font-weight: 200;
+    font-size: 1.25rem;
+    color: var(--main-text);
+    align-self: flex-start;
+}
+
+#myBtn {
+    margin-top: 2rem;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    grid-template-columns: 5fr 5fr 5fr;
+    grid-template-areas:
+        "title title title"
+        "content content content";
+    background-color: #fafafa;
+    margin: auto;
+    border: 1px solid #888;
+    width: 70%;
+    height: 75%;
+    border-radius: 20px;
+  }
+
+  .modal-title, .modal-card {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .modal-title {
+    grid-area: title;
+    font-family: Poppins ExtraBold;
+    font-size: 1.6vw;
+    color: var(--main-text);
+    margin-top: 2.2rem;
+  }
+
+  .modal-card {
+    grid-area: content;
+  }
+  
+  .close {
+    display: flex;
+    top: 1rem;
+    right: 1rem;
+    position: absolute;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: rgb(135, 135, 135);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .user-card {
+    color: #fff !important;
+    width: 18rem;
+    height: 24rem;
+    background-color: #f1f1f1;
+    display: flex;
+    margin: 3rem;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .user-card:hover {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .user-card:hover .card-btn {
+    display: block;
+  }
+
+  .user-card:hover .cad-card-text {
+    display: flex;
+  }
+
+  .user-card-title {
+    font-size: 1.8vw !important;
+    font-family: Poppins SemiBold;
+    text-align: center;
+    margin-top: 2rem;
+    line-height: 2rem;
+    color: var(--main-text);
+  }
+
+  .cad-card-text {
+    font-size: 1rem;
+    font-family: Poppins Regular;
+    text-align: center;
+    width: 70%;
+    display: none;
+    color: var(--main-text);
+  }
+
+  .card-btn {
+    width: 12rem;
+    height: 3.5rem;
+    background-color: var(--blue-solar);
+    display: none;
+  }
+
+  .cadselect-in {
+    margin-bottom:0.8rem;
+    height: 2.5rem;
+    font-size: 1vw;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: var(--input-bg-color);
+    font-family: Poppins Regular;
+  }
+
+  .cadinput-in {
+    margin-top: -0.3rem;
+    margin-bottom:0.8rem;
+    height: 2.5rem;
+    font-size: 1vw;
+    border-radius: 10px;
+    padding-left: 1rem;
+    border: none;
+    outline: none;
+    background-color: var(--input-bg-color);
+    font-family: Poppins Regular;
+  }
+  
+  /*footer*/
+  
+  footer{
+    padding: 2.5rem;
+    background-color: var(--black-nav-color) ;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+  
+  footer .social{
+
+    text-align: center;
+    padding-bottom: 1.5rem;
+  }
+  
+  footer .social a{
+    font-family: Poppins Regular;
+    font-size: 1.5rem;
+    color: #fff;
+    border: 1px solid #fff;
+    width: 2.4rem;
+    height: 2.4rem;
+    line-height: 2.3rem;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 0.5rem;
+    opacity: 0.75;
+  }
+  
+  footer .social a:hover{
+    opacity: 0.9;
+  }
+  
+  footer ul{
+    list-style: none;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+  
+  footer ul li a{
+    font-family: Poppins Regular;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+  }
+  
+  footer ul li{
+    display: inline-block;
+    padding: 0 1rem;
+  }
+  
+  footer ul li a:hover{
+    opacity: 1;
+  }
+  
+  footer .copyright{
+    font-family: Poppins Regular;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #fafafa;
+  } 
